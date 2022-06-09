@@ -19,7 +19,7 @@ from configs.db_parser import delete_group, delete_user, delete_auth_user_group
 def browser():
     chrome_options = Options()
     chrome_options.add_argument('--headless')
-    # chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-gpu')
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()
