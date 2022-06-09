@@ -2,7 +2,7 @@ import configparser
 
 
 config = configparser.ConfigParser()
-config.read('configs/db_config.ini')
+config.read('/home/valerya/PycharmProjects/Final_project/configs/db_config.ini')
 
 # connection
 user = config.get("connection", "user")

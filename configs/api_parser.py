@@ -2,7 +2,7 @@ import configparser
 
 
 config = configparser.ConfigParser()
-config.read('configs/api_config.ini')
+config.read('/home/valerya/PycharmProjects/Final_project/configs/api_config.ini')
 
 # requests user
 create_user = config.get("requests_user", "create")
