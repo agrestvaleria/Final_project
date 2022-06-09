@@ -2,7 +2,7 @@ import configparser
 
 
 config = configparser.ConfigParser()
-config.read('/home/valerya/PycharmProjects/Final_project/configs/ui_config.ini')
+config.read('configs/ui_config.ini')
 
 # admin login info
 username = config.get("login_info", "username")

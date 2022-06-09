@@ -1,7 +1,6 @@
 import json
 
-with open('/home/valerya/PycharmProjects/Final_project/helpers/api.json',
-          'r') as file:
+with open('helpers/api.json', 'r') as file:
     py_obj = json.load(file)
 
 
