@@ -1,6 +1,8 @@
+import warnings
 import pytest
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 from pages.Admin_page import AdminPage
 from pages.DB_Page import DataBasePage
@@ -21,7 +23,9 @@ def browser():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(options=chrome_options)
+    warnings.filterwarnings("ignore", category=DeprecationWarning)
+    driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(),
+                              options=chrome_options)
     driver.maximize_window()
     driver.implicitly_wait(10)
     yield driver
