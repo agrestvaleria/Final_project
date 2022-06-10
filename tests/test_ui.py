@@ -30,7 +30,8 @@ class TestUI:
                             all_pic_data = main_page.find_all_pictures_data()
                             with allure.step('Check data of deleted pic is '
                                              'not in collected dates'):
-                                assert new_date not in all_pic_data
+                                assert new_date not in all_pic_data, \
+                                    f"Error: {new_date} and {all_pic_data}"
 
     @allure.feature('UI')
     @allure.story('Check admin button name on main page')
@@ -39,4 +40,5 @@ class TestUI:
         with allure.step('Get admin button name on main page'):
             admin_button_text = main_page.get_text_admin_button()
             with allure.step('Check name is not wrong'):
-                assert admin_button_text != button_text
+                assert admin_button_text != button_text, \
+                    f"Error: {admin_button_text}"

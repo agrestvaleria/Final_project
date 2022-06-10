@@ -4,7 +4,7 @@ from pages.Base_page import BasePage
 from locators.Posts_page_locators import PostsPageLocators
 
 
-class PostsPage(BasePage):
+class PostsPage(BasePage, PostsPageLocators):
 
     posts_url = BasePage.main_url + '/admin/app/post/'
 
@@ -12,7 +12,7 @@ class PostsPage(BasePage):
         self.open(self.posts_url)
 
     def find_first_pic_field(self):
-        field = self.find_elements(PostsPageLocators.ALL_PICS)
+        field = self.find_elements(self.ALL_PICS)
         return field[-1]
 
     def click_first_pic_field(self):
@@ -21,11 +21,11 @@ class PostsPage(BasePage):
         return field
 
     def find_date_field(self):
-        field = self.find_element(PostsPageLocators.DATE)
+        field = self.find_element(self.DATE)
         return field
 
     def find_time_field(self):
-        field = self.find_element(PostsPageLocators.TIME)
+        field = self.find_element(self.TIME)
         return field
 
     def set_new_date(self, date):
@@ -41,7 +41,7 @@ class PostsPage(BasePage):
         return field
 
     def find_save_field(self):
-        field = self.find_element(PostsPageLocators.SAVE)
+        field = self.find_element(self.SAVE)
         return field
 
     def click_save_field(self):
@@ -50,7 +50,7 @@ class PostsPage(BasePage):
         return field
 
     def find_checkbox_first_pic_field(self):
-        checkboxes = self.find_elements(PostsPageLocators.CHECKBOXES)
+        checkboxes = self.find_elements(self.CHECKBOXES)
         return checkboxes[-1]
 
     def click_checkbox_first_pic_field(self):
@@ -59,12 +59,12 @@ class PostsPage(BasePage):
         return field
 
     def select_delete_all(self):
-        select = Select(self.find_element(PostsPageLocators.SELECT))
+        select = Select(self.find_element(self.SELECT))
         result = select.select_by_value("delete_selected")
         return result
 
     def find_go_field(self):
-        field = self.find_element(PostsPageLocators.GO)
+        field = self.find_element(self.GO)
         return field
 
     def click_go_field(self):
@@ -73,7 +73,7 @@ class PostsPage(BasePage):
         return field
 
     def find_sure_field(self):
-        field = self.find_element(PostsPageLocators.SURE)
+        field = self.find_element(self.SURE)
         return field
 
     def click_sure_field(self):

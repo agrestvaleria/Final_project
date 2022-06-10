@@ -1,8 +1,8 @@
 from pages.Base_page import BasePage
-from locators.Add_user_page_locators import *
+from locators.Add_user_page_locators import AddUserPageLocators
 
 
-class AddUserPage(BasePage):
+class AddUserPage(BasePage, AddUserPageLocators):
 
     add_user_page = BasePage.main_url + '/admin/auth/user/add/'
 
@@ -10,7 +10,7 @@ class AddUserPage(BasePage):
         self.open(self.add_user_page)
 
     def find_username_field(self):
-        field = self.find_element(AddUserPageLocators.USERNAME)
+        field = self.find_element(self.USERNAME)
         return field
 
     def fill_username_field(self, username):
@@ -19,7 +19,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_password_field(self):
-        field = self.find_element(AddUserPageLocators.PASSWORD)
+        field = self.find_element(self.PASSWORD)
         return field
 
     def fill_password_field(self, password):
@@ -28,7 +28,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_confirm_passwd_field(self):
-        field = self.find_element(AddUserPageLocators.CONFIRM_PASSWD)
+        field = self.find_element(self.CONFIRM_PASSWD)
         return field
 
     def fill_confirm_passwd_field(self, password):
@@ -37,7 +37,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_save_field(self):
-        field = self.find_element(AddUserPageLocators.SAVE)
+        field = self.find_element(self.SAVE)
         return field
 
     def click_save_field(self):
@@ -46,7 +46,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_firstname_field(self):
-        field = self.find_element(AddUserPageLocators.FIRST_NAME)
+        field = self.find_element(self.FIRST_NAME)
         return field
 
     def fill_firstname_field(self, firstname):
@@ -55,7 +55,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_lastname_field(self):
-        field = self.find_element(AddUserPageLocators.LAST_NAME)
+        field = self.find_element(self.LAST_NAME)
         return field
 
     def fill_lastname_field(self, lastname):
@@ -64,7 +64,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_email_field(self):
-        field = self.find_element(AddUserPageLocators.EMAIL)
+        field = self.find_element(self.EMAIL)
         return field
 
     def fill_email_field(self, email):
@@ -73,7 +73,7 @@ class AddUserPage(BasePage):
         return field
 
     def find_staff_field(self):
-        field = self.find_element(AddUserPageLocators.SUPERUSER)
+        field = self.find_element(self.SUPERUSER)
         return field
 
     def click_staff_field(self):
@@ -82,7 +82,7 @@ class AddUserPage(BasePage):
         return field
 
     def add_to_group_field(self):
-        field = self.find_element(AddUserPageLocators.ADD_TO_GROUP)
+        field = self.find_element(self.ADD_TO_GROUP)
         return field
 
     def click_add_to_group_field(self):

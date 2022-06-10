@@ -21,7 +21,8 @@ class TestDB:
                 with allure.step('Find created group name on the site'):
                     result = groups_page.name_of_created_group()
                     with allure.step('Check group name in db = name on site'):
-                        assert result == group_name, f'{result}'
+                        assert result == group_name, \
+                            f'Error: result is {result}'
 
     @allure.feature('Data base')
     @allure.story('Check info of created user on the site appears in db')
@@ -37,7 +38,7 @@ class TestDB:
             with allure.step('Get new user info from db'):
                 result = self.db.user_info(db_conn, user_query)
                 with allure.step('Check user info in db = filled user info'):
-                    assert result == leila_info, f"Result is {result}"
+                    assert result == leila_info, f"Error: result is {result}"
 
     @allure.feature('Data base')
     @allure.story('Check created user joined created group in db')
@@ -51,7 +52,7 @@ class TestDB:
                 group_id_in_group
             )
             with allure.step('Check if user is in group'):
-                assert result == user_in_group, f"Result is {result}"
+                assert result == user_in_group, f"Error: result is {result}"
 
     @allure.feature('Data base')
     @allure.story('Check created user can log in to the site')
@@ -59,4 +60,4 @@ class TestDB:
         with allure.step('Log in with new user and get welcome block name'):
             result = log_in_new_user.get_welcome_name_text()
             with allure.step('Check if welcome block name == user name'):
-                assert result == welcome_name, f"Result is {result}"
+                assert result == welcome_name, f"Error: result is {result}"

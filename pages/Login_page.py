@@ -2,7 +2,7 @@ from pages.Base_page import BasePage
 from locators.Login_page_locators import LoginPageLocators
 
 
-class LoginPage(BasePage):
+class LoginPage(BasePage, LoginPageLocators):
 
     login_url = BasePage.main_url + '/admin/login/?next=/admin/'
 
@@ -10,7 +10,7 @@ class LoginPage(BasePage):
         self.open(self.login_url)
 
     def get_username_field(self):
-        field = self.find_element(LoginPageLocators.USERNAME)
+        field = self.find_element(self.USERNAME)
         return field
 
     def fill_username_field(self, username):
@@ -19,7 +19,7 @@ class LoginPage(BasePage):
         return field
 
     def get_password_field(self):
-        field = self.find_element(LoginPageLocators.PASSWORD)
+        field = self.find_element(self.PASSWORD)
         return field
 
     def fill_password_field(self, password):
@@ -28,7 +28,7 @@ class LoginPage(BasePage):
         return field
 
     def get_login_field(self):
-        field = self.find_element(LoginPageLocators.LOG_IN)
+        field = self.find_element(self.LOG_IN)
         return field
 
     def click_login_field(self):

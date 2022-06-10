@@ -2,7 +2,7 @@ from pages.Base_page import BasePage
 from locators.User_page_locators import UserPageLocators
 
 
-class UserPage(BasePage):
+class UserPage(BasePage, UserPageLocators):
 
     user_page = BasePage.main_url + '/admin/auth/user/'
 
@@ -10,7 +10,7 @@ class UserPage(BasePage):
         self.open(self.user_page)
 
     def find_logout_field(self):
-        field = self.find_element(UserPageLocators.LOG_OUT)
+        field = self.find_element(self.LOG_OUT)
         return field
 
     def click_logout_field(self):
