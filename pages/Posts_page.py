@@ -2,6 +2,7 @@ from selenium.webdriver.support.select import Select
 
 from pages.Base_page import BasePage
 from locators.Posts_page_locators import PostsPageLocators
+from configs.ui_parsing import select_by_value
 
 
 class PostsPage(BasePage, PostsPageLocators):
@@ -60,7 +61,7 @@ class PostsPage(BasePage, PostsPageLocators):
 
     def select_delete_all(self):
         select = Select(self.find_element(self.SELECT))
-        result = select.select_by_value("delete_selected")
+        result = select.select_by_value(select_by_value)
         return result
 
     def find_go_field(self):

@@ -27,3 +27,6 @@ false_3 = config.get("button_false", "text2")
 
 # welcome name of new user
 welcome_name = config.get("welcome", "welcome_name")
+
+# value for select to choose
+select_by_value = config.get("select", "select_by_value")

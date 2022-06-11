@@ -1,3 +1,5 @@
+import pytest
+
 from pages.DB_Page import DataBasePage
 
 from configs.ui_parsing import new_username, new_password, first_name
@@ -13,6 +15,7 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check name of created group in db appears on the site')
+    @pytest.mark.positive
     def test_check_group_name(self, db_conn, groups_page):
         with allure.step('Create new group in db'):
             self.db.executions(db_conn, create_group)
@@ -26,6 +29,7 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check info of created user on the site appears in db')
+    @pytest.mark.positive
     def test_check_user_in_db(self, db_conn, add_user_page):
         with allure.step('Create new user on the site'):
             add_user_page.user_creation(
@@ -42,6 +46,7 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check created user joined created group in db')
+    @pytest.mark.positive
     def test_new_user_in_group(self, db_conn):
         with allure.step('Get info from db if user is in group'):
             result = self.db.check_user_in_group(
@@ -56,6 +61,7 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check created user can log in to the site')
+    @pytest.mark.positive
     def test_new_user_log_in(self, log_in_new_user, db_conn):
         with allure.step('Log in with new user and get welcome block name'):
             result = log_in_new_user.get_welcome_name_text()
