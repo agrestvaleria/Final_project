@@ -26,6 +26,3 @@ class BasePage:
 
     def refresh(self):
         return self.driver.refresh()
-
-    def current_url(self):
-        return self.driver.current_url

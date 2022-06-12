@@ -12,6 +12,7 @@ class TestUI:
     @allure.feature('UI')
     @allure.story('Check first pic is deleted')
     @allure.severity(allure.severity_level.MINOR)
+    @pytest.mark.ui
     @pytest.mark.positive
     def test_first_pic_is_deleted(self, browser):
         with allure.step('Log in with admin'):
@@ -38,6 +39,7 @@ class TestUI:
     @allure.feature('UI')
     @allure.story('Check admin button name on main page')
     @allure.severity(allure.severity_level.MINOR)
+    @pytest.mark.ui
     @pytest.mark.negative
     @pytest.mark.parametrize('button_text', [false_1, false_2, false_3])
     def test_text_admin_button(self, main_page, button_text):
