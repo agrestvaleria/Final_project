@@ -13,6 +13,8 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('User creation')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.user_api
     @pytest.mark.positive
     def test_create_user(self):
@@ -23,6 +25,8 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('User log in positive')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.user_api
     @pytest.mark.positive
     def test_log_in_user_positive(self):
@@ -33,6 +37,8 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('User log in negative')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.user_api
     @pytest.mark.negative
     @pytest.mark.parametrize('status', ['100', '300', '400', '500'])
@@ -44,6 +50,7 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('Get info about user')
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.user_api
     @pytest.mark.positive
     def test_get_user_info(self):
@@ -54,6 +61,7 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('User log out')
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.user_api
     @pytest.mark.positive
     def test_log_out(self):
@@ -64,6 +72,7 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('Delete user positive')
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.user_api
     @pytest.mark.positive
     def test_delete_user_positive(self):
@@ -74,6 +83,7 @@ class TestAPI:
 
     @allure.feature('API user')
     @allure.story('Delete user negative')
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.user_api
     @pytest.mark.negative
     @pytest.mark.parametrize('status', ['100', '300', '400', '500'])
@@ -85,6 +95,8 @@ class TestAPI:
 
     @allure.feature('API pet')
     @allure.story('Pet creation')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.pet_api
     @pytest.mark.positive
     def test_create_pet(self):
@@ -95,6 +107,7 @@ class TestAPI:
 
     @allure.feature('API pet')
     @allure.story('Check info about pet')
+    @allure.severity(allure.severity_level.NORMAL)
     @pytest.mark.pet_api
     @pytest.mark.positive
     def test_check_pet_info(self):
@@ -105,6 +118,7 @@ class TestAPI:
 
     @allure.feature('API pet')
     @allure.story('Check updated pet\'s name')
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.pet_api
     @pytest.mark.positive
     def test_update_pet_name(self):

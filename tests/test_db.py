@@ -15,6 +15,8 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check name of created group in db appears on the site')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.positive
     def test_check_group_name(self, db_conn, groups_page):
         with allure.step('Create new group in db'):
@@ -29,6 +31,8 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check info of created user on the site appears in db')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.positive
     def test_check_user_in_db(self, db_conn, add_user_page):
         with allure.step('Create new user on the site'):
@@ -46,6 +50,8 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check created user joined created group in db')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.positive
     def test_new_user_in_group(self, db_conn):
         with allure.step('Get info from db if user is in group'):
@@ -61,6 +67,8 @@ class TestDB:
 
     @allure.feature('Data base')
     @allure.story('Check created user can log in to the site')
+    @allure.severity(allure.severity_level.TRIVIAL)
+    @pytest.mark.smoke
     @pytest.mark.positive
     def test_new_user_log_in(self, log_in_new_user, db_conn):
         with allure.step('Log in with new user and get welcome block name'):
