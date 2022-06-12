@@ -23,7 +23,7 @@ new_date = config.get("picture_info", "new_date")
 # false admin button texts
 false_1 = config.get("button_false", "text1")
 false_2 = config.get("button_false", "text2")
-false_3 = config.get("button_false", "text2")
+false_3 = config.get("button_false", "text3")
 
 # welcome name of new user
 welcome_name = config.get("welcome", "welcome_name")
