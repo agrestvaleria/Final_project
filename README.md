@@ -1,7 +1,7 @@
-# Final project (AQA courses)
-    For the implementation of 4 test-cases download and install the django app: git clone https://github.com/thejungwon/docker-webapp-django.git
+# Final project (AQA Engineer courses)
+    For the implementation of 1-4 test-cases download and install the django app: git clone https://github.com/thejungwon/docker-webapp-django.git
     Open the app at localhost:8000
-    For the implementation of 2 last test-cases use URL: https://petstore.swagger.io/#/
+    For the implementation of 5-6 test-cases use URL: https://petstore.swagger.io/#/
 
 # Tasks:
     It is necessary to create a framework that will check test cases.
